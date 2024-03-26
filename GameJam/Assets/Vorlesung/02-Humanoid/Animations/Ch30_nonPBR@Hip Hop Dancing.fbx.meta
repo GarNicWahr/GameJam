@@ -1,59 +1,9 @@
 fileFormatVersion: 2
-guid: 5415f6952754e9e409e3da3c1fa48a68
+guid: bb17a41f99477414abef234bc6897cb8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch30_Body
-    second: {fileID: 2100000, guid: 8b260254ca5c10744a92a3070c4c8595, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch30_Body1
-    second: {fileID: 2100000, guid: bf9a6786df93b3f48951d59e2ada3300, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1001_Diffuse
-    second: {fileID: 2800000, guid: b0292ff5d865d7746a18b8c340aa3a8e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1001_Glossiness
-    second: {fileID: 2800000, guid: a00ffd33a38a9c144bb20371beb1c464, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1001_Normal
-    second: {fileID: 2800000, guid: b9332a586a66ca446b0db8b9992fb80b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1001_Specular
-    second: {fileID: 2800000, guid: c532a5f0315e0c04088b4b37feba8e3e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1002_Diffuse
-    second: {fileID: 2800000, guid: 3a0dc103c9b24b14fb15b8abf81cde96, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1002_Glossiness
-    second: {fileID: 2800000, guid: fca966639720d2e47bc3155cde968786, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1002_Normal
-    second: {fileID: 2800000, guid: 5437a45f161b9974a91fbb2d2faebd2e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch30_1002_Specular
-    second: {fileID: 2800000, guid: 699e6d29961817a4183f5d62ecec9937, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -83,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sad Idle
+      name: Hip Hop Dancing
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 84
+      lastFrame: 517
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
@@ -929,11 +879,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5415f6952754e9e409e3da3c1fa48a68,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
