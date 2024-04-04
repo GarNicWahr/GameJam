@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 761b53aed559a6b4d8e3ae97d8f43a7f,
         type: 3}
       propertyPath: m_Name
-      value: Whiteclownn@Neutral Idle
+      value: Whiteclown
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -196,6 +196,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1285804162}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 761b53aed559a6b4d8e3ae97d8f43a7f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1285804164}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 761b53aed559a6b4d8e3ae97d8f43a7f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1285804163}
   m_SourcePrefab: {fileID: 100100000, guid: 761b53aed559a6b4d8e3ae97d8f43a7f, type: 3}
 --- !u!1 &171064364
 GameObject:
@@ -787,6 +795,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1285804163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285804160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 7055a937bebc9224381fcf3c143cebaa, type: 2}
+--- !u!114 &1285804164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285804160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &1532027257
 GameObject:
   m_ObjectHideFlags: 0
