@@ -11,26 +11,24 @@ public class SimpleWalkController : MonoBehaviour
     // Defines how fast the GO can turn
     public float turnSpeed = 90;
 
-    public float runningSpeed = 20;
+    public float runningSpeed = 9;
 
     // Define the Animator Component
     private Animator _animator;
 
     // Define the variable names for Animator Hashes
-    private int isWalkingParameterHash;
-    private int directionParameterHash;
-    private int isRunningParameterHash;
+    private int _isWalkingParameterHash;
+    private int _directionParameterHash;
+    private int _isRunningParameterHash;
 
-    // Definde if LeftShift is pressed or not
-    private bool isRunning;
 
     private void Start()
     {
         // Define the Animator Component and its variables to hashes
         _animator = GetComponent<Animator>();
-        isWalkingParameterHash = Animator.StringToHash("isWalking");
-        directionParameterHash = Animator.StringToHash("direction");
-        isRunningParameterHash = Animator.StringToHash("isRunning");
+        _isWalkingParameterHash = Animator.StringToHash("isWalking");
+        _directionParameterHash = Animator.StringToHash("direction");
+        _isRunningParameterHash = Animator.StringToHash("isRunning");
     }
     // Update is called once per frame
     void Update()
@@ -64,9 +62,9 @@ public class SimpleWalkController : MonoBehaviour
         }
 
 
-        _animator.SetBool(isWalkingParameterHash, verticalInputRaw != 0);
-        _animator.SetFloat(directionParameterHash, verticalInputRaw);
-        _animator.SetBool(isRunningParameterHash, Input.GetKey(KeyCode.LeftShift));
+        _animator.SetBool(_isWalkingParameterHash, verticalInputRaw != 0);
+        _animator.SetFloat(_directionParameterHash, verticalInputRaw);
+        _animator.SetBool(_isRunningParameterHash, Input.GetKey(KeyCode.LeftShift));
     }
 
 }
