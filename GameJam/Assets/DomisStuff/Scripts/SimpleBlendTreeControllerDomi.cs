@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Controll a blend tree
 /// </summary>
-public class SimpleBlendTreeController : MonoBehaviour
+public class SimpleBlendTreeControllerDomi : MonoBehaviour
 {
     // Defines how fast the character will move
     public float MaxMovementSpeed = 9;
@@ -42,7 +42,11 @@ public class SimpleBlendTreeController : MonoBehaviour
         // Set parameter in animator
         _animator.SetFloat(_speedParameterHash, speed, LocomotionParameterDamping, Time.deltaTime);
 
+        // Set Bool in animator
+        _animator.SetBool(_isWalkingParameterHash, verticalInput != 0);
+
         // Move the go along z-axis
         transform.Translate(Vector3.forward * MaxMovementSpeed * verticalInput * Time.deltaTime);
+
     }
 }
