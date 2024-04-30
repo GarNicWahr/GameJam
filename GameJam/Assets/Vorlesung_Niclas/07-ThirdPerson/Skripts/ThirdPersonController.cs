@@ -20,12 +20,16 @@ public class ThirdPersonController : MonoBehaviour
     // Hash speed parameter
     private int _isWalkingParameterHash;
 
+    // Main Camera
+    private Transform _cameraTransform;
+
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _speedParameterHash = Animator.StringToHash("speed");
         _isWalkingParameterHash = Animator.StringToHash("isMoving");
+        _cameraTransform = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -33,18 +37,33 @@ public class ThirdPersonController : MonoBehaviour
     {
         // Stores inputs
         float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        // "speed" variable im Animator auf 0 oder 1 begrenzen
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
+
+        movementDirection = Quaternion.AngleAxis(_cameraTransform.rotation.eulerAngles.y, Vector3.up) * movementDirection;
 
         // Should walk? (left or right shift held)
         bool shouldWalk = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
         // Set speed to half of input when charakter should walk
         // otherwise use horizontal input
-        float speed = shouldWalk ? verticalInput * 0.333f : verticalInput;
+        float speed = shouldWalk ? inputMagnitude * 2 : inputMagnitude;
 
         // Set animator isWalking parameter depending on input
-        _animator.SetBool(_isWalkingParameterHash, verticalInput > 0);
+        _animator.SetBool(_isWalkingParameterHash, inputMagnitude > 0);
 
         // Set animaotr speed parameter with damping (moves the character via root motion)
         _animator.SetFloat(_speedParameterHash, speed, LocomotionParameterDamping, Time.deltaTime);
+
+        // Rotate Character
+
+        if(movementDirection != Vector3.zero) 
+        {
+        Quaternion targetCharacterRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, RotationSpeed * Time.deltaTime);
+        }
     }
 }
