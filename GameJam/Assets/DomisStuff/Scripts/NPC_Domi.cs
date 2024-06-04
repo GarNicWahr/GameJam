@@ -9,7 +9,7 @@ public enum NPCState { Idle, Flee }
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Animator))]
-public class NPC : MonoBehaviour
+public class NPC_Domi : MonoBehaviour
 {
     // In welchem Zustand startet der NPC
     public NPCState StartState;       
