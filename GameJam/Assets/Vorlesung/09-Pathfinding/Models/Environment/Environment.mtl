@@ -1,0 +1,20 @@
+newmtl PrototypTileYellow
+map_Kd PrototypeTileYellow.psd
+Kd 1 1 1
+d 1
+
+newmtl PrototypTileBlue
+map_Kd PrototypeTileBlue.psd
+Kd 1 1 1
+d 1
+
+newmtl PrototypTileRed
+map_Kd PrototypeTileRed.psd
+Kd 1 1 1
+d 1
+
+newmtl PrototypTileWhite
+map_Kd PrototypeTileWhite.psd
+Kd 1 1 1
+d 1
+
