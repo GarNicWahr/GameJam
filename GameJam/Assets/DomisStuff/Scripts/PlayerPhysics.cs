@@ -32,8 +32,6 @@ public class PlayerPhysics : MonoBehaviour
             _ySpeed = _ySpeed * Physics.gravity.y * GravityMultiplier * Time.deltaTime;
         }
 
-        print(_ySpeed);
-        print(isGrounded());
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
