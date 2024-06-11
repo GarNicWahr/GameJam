@@ -2722,7 +2722,7 @@ GameObject:
   - component: {fileID: 1580886301}
   - component: {fileID: 1580886300}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: AudioTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3475,7 +3475,7 @@ MonoBehaviour:
   hasScannedOnce: 0
   shouldShowMixers: 1
   shouldShowDir: 1
-  shouldShowClips: 0
+  shouldShowClips: 1
   audioManagerFile: {fileID: 11400000, guid: 46a2cf6faf0d0dc4dbd7f17f22dc550b, type: 2}
 --- !u!82 &1880809617
 AudioSource:
@@ -3487,7 +3487,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b979f7a6c9566542b1f150a8f11c2b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a861cbea85314884882f518440e0b2e7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
