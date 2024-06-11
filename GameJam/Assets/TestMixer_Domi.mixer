@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-8044794858338490673
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: e7dc07393956e9645bafb33dc12c9636
+  m_EffectName: Compressor
+  m_MixLevel: 201a2d1e1cda7dd4a9cbf1014ffb9dc6
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 047e5276b3cdcb24895ca2a25abad040
+  - m_ParameterName: Attack
+    m_GUID: 8218a785a33a79f429cd2644b4668eef
+  - m_ParameterName: Release
+    m_GUID: ebc96c9c96c5da44f97c5c4e8ccb7c6f
+  - m_ParameterName: Make up gain
+    m_GUID: a807d48f8289cf8499c58efc1e24c38f
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-7275249159008426459
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7a349b556d0dfe54e9871da93a50e6c8
+  m_EffectName: Echo
+  m_MixLevel: 2504bf123d3b9ea479a37231cbc08ab0
+  m_Parameters:
+  - m_ParameterName: Delay
+    m_GUID: 41a9451a680e4e54799eb8a1d9110ee3
+  - m_ParameterName: Decay
+    m_GUID: 22c395e67fec97944a5a855396a9bed8
+  - m_ParameterName: Max channels
+    m_GUID: 915e8b7dec77bbe42b039a434257e944
+  - m_ParameterName: Drymix
+    m_GUID: 22d6d73954cd92541a56b4e28bbd0505
+  - m_ParameterName: Wetmix
+    m_GUID: cebd3c82aa576fb4a8214cdb55abb900
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-6873959354831085673
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 538181e11acde1945891f027989aad31
+  m_EffectName: Normalize
+  m_MixLevel: 9fb93b0eea75cdc4a828168cc464a0cb
+  m_Parameters:
+  - m_ParameterName: Fade in time
+    m_GUID: de50944df7ac9e34ab7f12e9fe9fc10d
+  - m_ParameterName: Lowest volume
+    m_GUID: 4ba2c9c99fd861549b78f17d173baefb
+  - m_ParameterName: Maximum amp
+    m_GUID: c8fabdb3eecd2d043a17b4c800814f4d
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TestMixer_Domi
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - b045ef7f9a31a84479d57c40dc8ef56e
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b045ef7f9a31a84479d57c40dc8ef56e
+  m_Children: []
+  m_Volume: a945b4a06a21a5d46b05b4a41d5431b7
+  m_Pitch: 4480bdce2187e0a418dfabf5cc24da9d
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  - {fileID: -7275249159008426459}
+  - {fileID: -6873959354831085673}
+  - {fileID: -8044794858338490673}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 1ada7ad7a77a9fb428fece9c105e3d92
+  m_EffectName: Attenuation
+  m_MixLevel: db4ba5a03d754f94c9684f4b2ca50bf9
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: fabaf8a39a4838c4ca38c5d18f109afb
+  m_FloatValues:
+    22c395e67fec97944a5a855396a9bed8: 0
+  m_TransitionOverrides: {}

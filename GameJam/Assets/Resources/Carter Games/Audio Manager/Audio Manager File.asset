@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ae0c8eafd7263429865ae0f6fe29e6, type: 3}
+  m_Name: Audio Manager File
+  m_EditorClassIdentifier: 
+  tabPos: 0
+  audioMixer:
+  - {fileID: 24300002, guid: d1adfba31e1dd63459c5517a6eac76fa, type: 2}
+  soundPrefab: {fileID: 322064603624763291, guid: f97cb5ab9dca8bd488116e0ffc057e10,
+    type: 3}
+  isPopulated: 1
+  directory:
+  - Assets/GGJ-2024 Sound & Music Pack/GGJ-2024 Sound & Music Pack/Generic Pack/Ambience
+  - Assets/GGJ-2024 Sound & Music Pack/GGJ-2024 Sound & Music Pack/Generic Pack/Interaction
+  - Assets/GGJ-2024 Sound & Music Pack/GGJ-2024 Sound & Music Pack/Generic Pack/Fight_and_Weapon
+  library:
+  - key: AMB_Campfire_Loop
+    value: {fileID: 8300000, guid: ef86b56638283044b8792b19078fee60, type: 3}
+  - key: AMB_Camp_Loop
+    value: {fileID: 8300000, guid: 63fbf76fafeae224e9a0231b20d16ffc, type: 3}
+  - key: AMB_Designed_Liquid_Microscopic_Loop
+    value: {fileID: 8300000, guid: 6c3ad0c568cb1d948b5376a3d482d193, type: 3}
+  - key: AMB_Electromagnetic_SciFi_Magnetic_Area_Loop
+    value: {fileID: 8300000, guid: a81f3d97d9eb58f48959a00ee315314d, type: 3}
+  - key: AMB_Factory_Loop
+    value: {fileID: 8300000, guid: e593881afed1d5945b7fc8ca0ed26b8a, type: 3}
+  - key: AMB_Farm_Loop
+    value: {fileID: 8300000, guid: 083c6513227e6ca4e8ab8cded203c99d, type: 3}
+  - key: AMB_Forest_Loop
+    value: {fileID: 8300000, guid: e603e4a224674f740b66ce1820ebb345, type: 3}
+  - key: AMB_Magma_Volcano_Loop
+    value: {fileID: 8300000, guid: b12d7e921892a394e8680462ea374e7a, type: 3}
+  - key: AMB_Morning_Forest_and_River_Rich_Loop
+    value: {fileID: 8300000, guid: 904374bebd5370542af7b828239d0eaa, type: 3}
+  - key: AMB_Nature_Night_Loop
+    value: {fileID: 8300000, guid: 7afc109575358bd4aa289dc8ca39ac7c, type: 3}
+  - key: AMB_Rain_Loop
+    value: {fileID: 8300000, guid: b288fa1c7d9496e4e9668e70a7c27248, type: 3}
+  - key: AMB_Static_Noise_Crackle
+    value: {fileID: 8300000, guid: 13a4b3f8958b145448b17439cba39958, type: 3}
+  - key: AMB_Thunder_Loop
+    value: {fileID: 8300000, guid: 85288ea2e67832b49b98e7575ebd5e28, type: 3}
+  - key: AMB_Underwater_Loop
+    value: {fileID: 8300000, guid: a00a2063d0311c549ba2e8e2a5e72704, type: 3}
+  - key: AMB_Wind_Loop
+    value: {fileID: 8300000, guid: 815a195e813355c4791f707f6fee6e36, type: 3}
+  - key: AMB_Womb_Loop
+    value: {fileID: 8300000, guid: d6d6c50906ed9f74b953abe1031cd693, type: 3}
+  - key: SFX_Designed_Appear
+    value: {fileID: 8300000, guid: cacc8c1f89c5e3446bae53f5cc23bd34, type: 3}
+  - key: SFX_Designed_SciFi_Activate
+    value: {fileID: 8300000, guid: 063031a65f24aab4cae8878a33cea7a6, type: 3}
+  - key: SFX_Designed_Transform
+    value: {fileID: 8300000, guid: ce4bf24357596e345ae869fb657316ce, type: 3}
+  - key: SFX_Mechanical_Interact_Loop
+    value: {fileID: 8300000, guid: 61ccbb9e22e685c4fa8a91c41f2a9a56, type: 3}
+  - key: SFX_Pouring_Water
+    value: {fileID: 8300000, guid: 89ee61326ea720441aeccbde9e626147, type: 3}
+  - key: SFX_Hit_Body_Generic_1
+    value: {fileID: 8300000, guid: d85c1eb626cd2d04f98114e9587df1d6, type: 3}
+  - key: SFX_Hit_Body_Generic_2
+    value: {fileID: 8300000, guid: 1c2134fba858383459a8c94d56c178d3, type: 3}
+  - key: SFX_Melee_Swoosh_1
+    value: {fileID: 8300000, guid: aacbcf1843bd0ed4aacd3e7ae1aa6b78, type: 3}
+  - key: SFX_Melee_Swoosh_2
+    value: {fileID: 8300000, guid: f232404b20f840e4b9fae402824d0906, type: 3}
