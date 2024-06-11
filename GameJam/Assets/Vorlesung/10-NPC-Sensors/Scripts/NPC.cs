@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum NPCState { Idle, Flee }
+public enum NPCStateDomi { Idle, Flee }
 
 /// <summary>
 /// Einfache Implementierung eines NPC mit zwei Zuständen (Idle + Flee)
@@ -12,7 +12,7 @@ public enum NPCState { Idle, Flee }
 public class NPC : MonoBehaviour
 {
     // In welchem Zustand startet der NPC
-    public NPCState StartState;       
+    public NPCStateDomi StartState;       
 
     // Distanz ab welcher der NPC flüchtet
     public float ComfortDistance;
@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour
     public float RunAwayDistance;
 
     // Aktueller Zustand (Idle/Flee)
-    public NPCState CurrentState { get; private set; }
+    public NPCStateDomi CurrentState { get; private set; }
 
     // Referenz zum Spieler
     private Transform _player;
@@ -51,20 +51,20 @@ public class NPC : MonoBehaviour
     {
         switch (CurrentState) 
         {
-            case NPCState.Idle:
+            case NPCStateDomi.Idle:
                 Idle();
                 // Übergänge (Transitions)
                 if(Vector3.Distance(transform.position, _player.position) < ComfortDistance)
                 {
-                    CurrentState = NPCState.Flee;
+                    CurrentState = NPCStateDomi.Flee;
                 }
                 break;
-            case NPCState.Flee:
+            case NPCStateDomi.Flee:
                 Flee();
                 // Übergänge (Transitions)
                 if (Vector3.Distance(transform.position, _player.position) > RunAwayDistance)
                 {
-                    CurrentState = NPCState.Idle;
+                    CurrentState = NPCStateDomi.Idle;
                 }
                 break;
         }
