@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ae0c8eafd7263429865ae0f6fe29e6, type: 3}
+  m_Name: Audio Manager File
+  m_EditorClassIdentifier: 
+  tabPos: 0
+  audioMixer:
+  - {fileID: 0}
+  soundPrefab: {fileID: 322064603624763291, guid: f97cb5ab9dca8bd488116e0ffc057e10,
+    type: 3}
+  isPopulated: 1
+  directory:
+  - Assets/GGJ-2024 Sound & Music Pack/GGJ-2024 Sound & Music Pack/Generic Pack/Alert_Alarm_Siren_Notification
+  - Assets/GGJ-2024 Sound & Music Pack/GGJ-2024 Sound & Music Pack/Generic Pack/Ambience
+  - Assets/GGJ-2024 Sound & Music Pack/GGJ-2024 Sound & Music Pack/Generic Pack/Animals
+  library:
+  - key: SFX_Alarm_Car_Siren_Loop_1
+    value: {fileID: 8300000, guid: a861cbea85314884882f518440e0b2e7, type: 3}
+  - key: SFX_Alarm_Car_Siren_Loop_2
+    value: {fileID: 8300000, guid: 45f560102e88b684d92130475d7376f7, type: 3}
+  - key: SFX_Bell_Agogo
+    value: {fileID: 8300000, guid: 12c3197b919717a44ba882551d4aeed0, type: 3}
+  - key: SFX_Bell_Triangle
+    value: {fileID: 8300000, guid: 7b979f7a6c9566542b1f150a8f11c2b4, type: 3}
+  - key: SFX_SciFi_Alert_Danger
+    value: {fileID: 8300000, guid: f6003459343b07d43aa48ed5a974c011, type: 3}
+  - key: AMB_Campfire_Loop
+    value: {fileID: 8300000, guid: ef86b56638283044b8792b19078fee60, type: 3}
+  - key: AMB_Camp_Loop
+    value: {fileID: 8300000, guid: 63fbf76fafeae224e9a0231b20d16ffc, type: 3}
+  - key: AMB_Designed_Liquid_Microscopic_Loop
+    value: {fileID: 8300000, guid: 6c3ad0c568cb1d948b5376a3d482d193, type: 3}
+  - key: AMB_Electromagnetic_SciFi_Magnetic_Area_Loop
+    value: {fileID: 8300000, guid: a81f3d97d9eb58f48959a00ee315314d, type: 3}
+  - key: AMB_Factory_Loop
+    value: {fileID: 8300000, guid: e593881afed1d5945b7fc8ca0ed26b8a, type: 3}
+  - key: AMB_Farm_Loop
+    value: {fileID: 8300000, guid: 083c6513227e6ca4e8ab8cded203c99d, type: 3}
+  - key: AMB_Forest_Loop
+    value: {fileID: 8300000, guid: e603e4a224674f740b66ce1820ebb345, type: 3}
+  - key: AMB_Magma_Volcano_Loop
+    value: {fileID: 8300000, guid: b12d7e921892a394e8680462ea374e7a, type: 3}
+  - key: AMB_Morning_Forest_and_River_Rich_Loop
+    value: {fileID: 8300000, guid: 904374bebd5370542af7b828239d0eaa, type: 3}
+  - key: AMB_Nature_Night_Loop
+    value: {fileID: 8300000, guid: 7afc109575358bd4aa289dc8ca39ac7c, type: 3}
+  - key: AMB_Rain_Loop
+    value: {fileID: 8300000, guid: b288fa1c7d9496e4e9668e70a7c27248, type: 3}
+  - key: AMB_Static_Noise_Crackle
+    value: {fileID: 8300000, guid: 13a4b3f8958b145448b17439cba39958, type: 3}
+  - key: AMB_Thunder_Loop
+    value: {fileID: 8300000, guid: 85288ea2e67832b49b98e7575ebd5e28, type: 3}
+  - key: AMB_Underwater_Loop
+    value: {fileID: 8300000, guid: a00a2063d0311c549ba2e8e2a5e72704, type: 3}
+  - key: AMB_Wind_Loop
+    value: {fileID: 8300000, guid: 815a195e813355c4791f707f6fee6e36, type: 3}
+  - key: AMB_Womb_Loop
+    value: {fileID: 8300000, guid: d6d6c50906ed9f74b953abe1031cd693, type: 3}
+  - key: SFX_Animal_Bird_Tweet_1
+    value: {fileID: 8300000, guid: 38ac75ec01973244d8ddf228e2f0c55a, type: 3}
+  - key: SFX_Animal_Bird_Tweet_2
+    value: {fileID: 8300000, guid: 4fbd337aed270ca44be8d00eba217d35, type: 3}
+  - key: SFX_Animal_Bird_Tweet_Loop
+    value: {fileID: 8300000, guid: 959866d3dc605ad4ebf1ac7d3fe8100b, type: 3}
+  - key: SFX_Animal_Chicken_Cluck_1
+    value: {fileID: 8300000, guid: bf6d4979d50285448ade5fc037cdfe98, type: 3}
+  - key: SFX_Animal_Chicken_Cluck_2
+    value: {fileID: 8300000, guid: 7b70768229dfb4a40b41ae29b91f61fc, type: 3}
+  - key: SFX_Animal_Chicken_Coop_Loop
+    value: {fileID: 8300000, guid: 81821b7d0e5fcdc4fa957be9d197c8c8, type: 3}
+  - key: SFX_Animal_Horse_Neigh_1
+    value: {fileID: 8300000, guid: 0dc0b871095592a46b1b9a13ca98d6fc, type: 3}
+  - key: SFX_Animal_Horse_Neigh_2
+    value: {fileID: 8300000, guid: ea37159f5e8275c45b41f45a23772090, type: 3}
+  - key: SFX_Animal_Pig_Squeal_1
+    value: {fileID: 8300000, guid: 348b76b3db911cd4b9971c0c6705adb9, type: 3}
+  - key: SFX_Animal_Pig_Squeal_2
+    value: {fileID: 8300000, guid: b4463cace60c84c4993ef0ae53fe2de7, type: 3}
