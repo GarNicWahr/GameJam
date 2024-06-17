@@ -17,6 +17,9 @@ public class SimplePlayerController : MonoBehaviour
     // Influence the gravity 
     public float GravityMultiplier = 1f;
 
+    // Is character audible (moving fast)
+    public bool IsAudible { get; private set; }
+
     // Component to move character
     private CharacterController _characterController;
 
@@ -68,9 +71,11 @@ public class SimplePlayerController : MonoBehaviour
         _ySpeed = IsGrounded() ? _ySpeed = 0 : _ySpeed += Physics.gravity.y * GravityMultiplier * Time.deltaTime;
         movementDirection.y = _ySpeed;
 
-
         // Move the character        
         _characterController.Move(movementDirection * speed * MaxMovementSpeed * Time.deltaTime);
+
+        // Character is audible, when moving fast
+        IsAudible = speed >= 0.5f;
     }
 
     /// <summary>

@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 /// <summary>
 /// Helper class to draw custom gizmos for the senes (eyes, ears)
 /// </summary>
-#if UNITY_EDITOR
 public class SenseGizmos
 {
     private static float _lineWidth = 5f;
