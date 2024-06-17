@@ -19,7 +19,7 @@ public class TriggerAudioJess : MonoBehaviour
     {
         Debug.Log(other.name + "entered Collider");
 
-        //audioManager.Play(ClipToPlay);
+        audioManager.Play(ClipToPlay);
         //musicPlayer.PlayTrack();
         //audioPlayer.Play();
     }
