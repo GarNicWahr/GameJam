@@ -22,7 +22,7 @@ public class PlayerPhysics : MonoBehaviour
 
     private void Update()
     {
-        if (isGrounded())
+        if (IsGrounded())
         {
             _ySpeed = 0;
         }
@@ -57,13 +57,13 @@ public class PlayerPhysics : MonoBehaviour
         _characterController.Move(velocity * Time.deltaTime);
     }
 
-    private bool isGrounded()
+    public bool IsGrounded()
     {
         return Physics.Raycast(transform.position + new Vector3(0, GroundCheckDistance * 0.5f, 0), Vector3.down, GroundCheckDistance);
     }
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(transform.position + new Vector3(0, GroundCheckDistance * 0.5f, 0), Vector3.down * GroundCheckDistance, isGrounded() ? Color.green : Color.red);
+        Debug.DrawRay(transform.position + new Vector3(0, GroundCheckDistance * 0.5f, 0), Vector3.down * GroundCheckDistance, IsGrounded() ? Color.green : Color.red);
     }
 }

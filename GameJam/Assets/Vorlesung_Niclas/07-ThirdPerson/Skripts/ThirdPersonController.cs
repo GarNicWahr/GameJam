@@ -11,6 +11,10 @@ public class ThirdPersonController : MonoBehaviour
     // Damping for locomotion animator parameter
     public float LocomotionParameterDamping = 0.1f;
 
+    // Script Component
+    public PlayerPhysics script;
+
+
     // Animator playing animations
     private Animator _animator;
 
@@ -23,8 +27,11 @@ public class ThirdPersonController : MonoBehaviour
     // Hash isCrouching parameter
     private int _isCrouchingParameterHash;
 
-    //Hash isJumping parameter
+    // Hash isJumping parameter
     private int _isJumpingParameterHash;
+
+    // Hash of Animator "Crouching" State
+    private int _crouchingStateParameterHash;
 
     // Main Camera
     private Transform _cameraTransform;
@@ -43,11 +50,13 @@ public class ThirdPersonController : MonoBehaviour
         _isWalkingParameterHash = Animator.StringToHash("isMoving");
         _isCrouchingParameterHash = Animator.StringToHash("isCrouching");
         _isJumpingParameterHash = Animator.StringToHash("isJumping");
+        _crouchingStateParameterHash = Animator.StringToHash("Crouching");
 
         _cameraTransform = Camera.main.transform;
 
         _player = GameObject.FindWithTag("Player");
         _characterController = _player.GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
@@ -70,9 +79,13 @@ public class ThirdPersonController : MonoBehaviour
         // otherwise use horizontal input
         float speed = shouldRun ? inputMagnitude * 2 : inputMagnitude;
 
-        // Set animator isJumping parameter depending on input
-        _animator.SetBool(_isJumpingParameterHash, Input.GetKeyUp(KeyCode.Space));
+        // Set animator isJumping parameter depending on input      //_animator.HasState(-1, _crouchingStateParameterHash)
 
+        if (script.IsGrounded())
+        {
+            _animator.SetBool(_isJumpingParameterHash, Input.GetKeyDown(KeyCode.Space));
+        }
+       
         // Set animator isCrouch parameter depending on input
         _animator.SetBool(_isCrouchingParameterHash, Input.GetKey(KeyCode.C));
 
@@ -90,7 +103,7 @@ public class ThirdPersonController : MonoBehaviour
         }
 
         // Set CharacterController Height and Center when crouched
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKey(KeyCode.C))
         {
             _characterController.height = 1.2f;
             _characterController.center = new Vector3(0, 0.6f, 0);
@@ -101,5 +114,8 @@ public class ThirdPersonController : MonoBehaviour
             _characterController.height = 1.7f;
             _characterController.center = new Vector3(0, 0.85f, 0);
         }
+
+
+
     }
 }
