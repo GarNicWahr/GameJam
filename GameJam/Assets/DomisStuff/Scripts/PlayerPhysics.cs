@@ -7,6 +7,7 @@ public class PlayerPhysics : MonoBehaviour
 {
     public float GroundCheckDistance = 0.1f;
     public float GravityMultiplier = 5f;
+    public float JumpForce = 10f;
     public float ForceStrength = 100;
 
     private float _ySpeed;
@@ -22,6 +23,7 @@ public class PlayerPhysics : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (IsGrounded())
         {
             _ySpeed = 0;
@@ -31,7 +33,26 @@ public class PlayerPhysics : MonoBehaviour
         {
             _ySpeed = _ySpeed * Physics.gravity.y * GravityMultiplier * Time.deltaTime;
         }
+        */
 
+        if (IsGrounded())
+        {
+            _ySpeed = 0;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _ySpeed = JumpForce;
+            }
+        }
+        else
+        {
+            _ySpeed += Physics.gravity.y * GravityMultiplier * Time.deltaTime;
+        }
+
+        _animator.SetFloat("yDirection", _ySpeed);
+
+        Vector3 velocity = new Vector3(0, _ySpeed, 0);
+        _characterController.Move(velocity * Time.deltaTime);
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
