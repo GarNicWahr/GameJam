@@ -8,7 +8,6 @@ public class Eyes_Domi : MonoBehaviour
 {
     public Transform HeadReferenceTransform;
     public float Range;
-    public float HearableRange;
     public float Fov;
     public LayerMask DetectionLayer;
     public bool IsDetecting { get; private set; }
@@ -28,7 +27,7 @@ public class Eyes_Domi : MonoBehaviour
     {
         _directionToPlayer = _player.position - HeadReferenceTransform.position;
 
-        if(IsInRange() && IsInFieldOfView() && IsNotOccluded() || IsInRange() && IsHearable())
+        if(IsInRange() && IsInFieldOfView() && IsNotOccluded())
         {
             IsDetecting = true;
         }
@@ -46,7 +45,6 @@ public class Eyes_Domi : MonoBehaviour
         if(IsInRange())
         {
             SenseGizmos.DrawFOV(HeadReferenceTransform.position, HeadReferenceTransform.forward, transform.up, Range, Fov);
-            SenseGizmos.DrawRangeDisc(HeadReferenceTransform.position, transform.up, HearableRange);
 
             if (IsInFieldOfView())
             {
@@ -90,8 +88,4 @@ public class Eyes_Domi : MonoBehaviour
         }
     }
 
-    public bool IsHearable()
-    {
-        return _directionToPlayer.sqrMagnitude <= HearableRange * HearableRange;
-    }
 }

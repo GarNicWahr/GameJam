@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 /// <summary>
 /// Base for a third person character controller
@@ -12,8 +13,7 @@ public class ThirdPersonController : MonoBehaviour
     public float LocomotionParameterDamping = 0.1f;
 
     // Script Component
-    public PlayerPhysics script;
-
+    private PlayerPhysics _scriptPlayerPhysics;
 
     // Animator playing animations
     private Animator _animator;
@@ -57,6 +57,7 @@ public class ThirdPersonController : MonoBehaviour
         _player = GameObject.FindWithTag("Player");
         _characterController = _player.GetComponent<CharacterController>();
 
+        _scriptPlayerPhysics = GetComponent<PlayerPhysics>();
     }
 
     // Update is called once per frame
@@ -79,9 +80,9 @@ public class ThirdPersonController : MonoBehaviour
         // otherwise use horizontal input
         float speed = shouldRun ? inputMagnitude * 2 : inputMagnitude;
 
-        // Set animator isJumping parameter depending on input      //_animator.HasState(-1, _crouchingStateParameterHash)
+        // Set animator isJumping parameter depending on input      //&& !_animator.GetCurrentAnimatorStateInfo(0).IsName("Crouching")
 
-        if (script.IsGrounded())
+        if (_scriptPlayerPhysics.IsGrounded() && !_animator.GetBool(_isCrouchingParameterHash)) 
         {
             _animator.SetBool(_isJumpingParameterHash, Input.GetKeyDown(KeyCode.Space));
         }
