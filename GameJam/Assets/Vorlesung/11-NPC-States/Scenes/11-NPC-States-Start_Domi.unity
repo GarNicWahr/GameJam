@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 423635863}
-  m_IndirectSpecularColor: {r: 0.58337194, g: 0.61450523, b: 0.641256, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1447,12 +1447,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206a5166c2c99da4892b5e4ed680c000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleState_Domi:
+  IdleState:
     MinWaitTime: 3
     MaxWaitTime: 5
-  FleeState_Domi:
-    fleeDistance: 0
-  PatrolState_Domi:
+  FleeState:
+    fleeDistance: 3
+  PatrolState:
     Waypoints:
     - {fileID: 257303303}
     - {fileID: 1631157947}

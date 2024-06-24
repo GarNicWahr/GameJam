@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class NPCPatrolState_Domi : BaseState
+public class NPCPatrolState : BaseState
 {
     public Transform[] Waypoints;
 
@@ -11,8 +11,8 @@ public class NPCPatrolState_Domi : BaseState
     private Vector3 targetPosition;
     public override void OnEnterState(BaseStateMachine controller)
     {
-        Debug.Log("NPCPatrolState_Domi:OnEnterState");
-        var npcStateMachine = controller as NPCStateMachine_Domi;
+        Debug.Log("NPCPatrolState:OnEnterState");
+        var npcStateMachine = controller as NPCStateMachine;
 
         if(targetPosition == Vector3.zero)
         {
@@ -25,8 +25,8 @@ public class NPCPatrolState_Domi : BaseState
 
     public override void OnUpdateState(BaseStateMachine controller)
     {
-        Debug.Log("NPCPatrolState_Domi:OnUpdateState");
-        var npcStateMachine = controller as NPCStateMachine_Domi;
+        Debug.Log("NPCPatrolState:OnUpdateState");
+        var npcStateMachine = controller as NPCStateMachine;
 
         float sqrDistance = (npcStateMachine.transform.position - targetPosition).sqrMagnitude;
 
@@ -35,13 +35,20 @@ public class NPCPatrolState_Domi : BaseState
         if(sqrDistance < 0.1f)
         {
             targetPosition = GetNextWaypoint();
-            npcStateMachine.SwitchToState(npcStateMachine.IdleState_Domi);
+            npcStateMachine.SwitchToState(npcStateMachine.IdleState);
+        }
+
+        //Can see or hear player > Switch to flee
+        if (npcStateMachine.CanHearPlayer || npcStateMachine.CanSeePlayer)
+        {
+            // npcStateMachine.SwitchToState(npcStateMachine.FleeState);
+            npcStateMachine.SwitchToState(npcStateMachine.CatchState);
         }
     }
 
     public override void OnExitState(BaseStateMachine controller)
     {
-        Debug.Log("NPCPatrolState_Domi:OnExitState");
+        Debug.Log("NPCPatrolState:OnExitState");
     }
 
     public Vector3 GetNextWaypoint()

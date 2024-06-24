@@ -8,17 +8,20 @@ public class PlayerPhysics : MonoBehaviour
     public float GroundCheckDistance = 0.1f;
     public float GravityMultiplier = 5f;
     public float JumpForce = 10f;
+    public float JumpDistance = 5f;
     public float ForceStrength = 100;
 
     private float _ySpeed;
-
+    private bool _isJumping;
     private Animator _animator;
     private CharacterController _characterController;
+    private Transform _cameraTransform;
 
-    private void Start()
+        private void Start()
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
+        _cameraTransform = Camera.main.transform;
     }
 
     private void Update()
@@ -38,10 +41,12 @@ public class PlayerPhysics : MonoBehaviour
         if (IsGrounded())
         {
             _ySpeed = 0;
+            _isJumping = false;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _ySpeed = JumpForce;
+                _isJumping = true;
             }
         }
         else
@@ -49,9 +54,19 @@ public class PlayerPhysics : MonoBehaviour
             _ySpeed += Physics.gravity.y * GravityMultiplier * Time.deltaTime;
         }
 
-        _animator.SetFloat("yDirection", _ySpeed);
+        //_animator.SetFloat("yDirection", _ySpeed);
+        _animator.SetFloat("yDirection", _characterController.velocity.y);
 
         Vector3 velocity = new Vector3(0, _ySpeed, 0);
+
+        if (_isJumping) 
+        {
+            Vector3 jumpDirection = Quaternion.Euler(0, _cameraTransform.eulerAngles.y, 0) * Vector3.forward;
+            jumpDirection *= JumpDistance;
+            velocity += jumpDirection;
+        }
+
+        Debug.Log(velocity);
         _characterController.Move(velocity * Time.deltaTime);
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)

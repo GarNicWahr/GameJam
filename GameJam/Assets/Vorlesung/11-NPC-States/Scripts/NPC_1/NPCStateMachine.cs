@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCStateMachine_Domi : BaseStateMachine
+public class NPCStateMachine : BaseStateMachine
 {
     public Vector3 PlayerPosition { get => _player.position; }
+
+    public Vector3 NPCPosition { get => _npc.position; }
+
     public bool CanSeePlayer { get => _eyes.IsDetecting; }
     public bool CanHearPlayer { get => _ears.IsDetecting; } 
 
-    public NPCIdleState_Domi IdleState_Domi;
-    public NPCFleeState_Domi FleeState_Domi;
-    public NPCPatrolState_Domi PatrolState_Domi;
+    public NPCIdleState IdleState;
+    public NPCFleeState FleeState;
+    public NPCPatrolState PatrolState;
+    public NPCCatchState CatchState;
 
 
     private Eyes _eyes;
     private Ears _ears;
 
     private Transform _player;
+    private Transform _npc;
     private NavMeshAgent _agent;
     private Animator _animator;
     public override void Initialize()
@@ -26,10 +31,11 @@ public class NPCStateMachine_Domi : BaseStateMachine
         _ears = GetComponentInChildren<Ears>();
 
         _player = GameObject.FindWithTag("Player").transform;
+        _npc = GetComponent<Transform>();
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
 
-        CurrentState = IdleState_Domi;
+        CurrentState = IdleState;
         CurrentState.OnEnterState(this);
     }
 

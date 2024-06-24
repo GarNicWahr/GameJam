@@ -30,8 +30,8 @@ public class ThirdPersonController : MonoBehaviour
     // Hash isJumping parameter
     private int _isJumpingParameterHash;
 
-    // Hash of Animator "Crouching" State
-    private int _crouchingStateParameterHash;
+    // Is character audible (moving fast)
+    public bool IsAudible { get; private set; }
 
     // Main Camera
     private Transform _cameraTransform;
@@ -50,7 +50,6 @@ public class ThirdPersonController : MonoBehaviour
         _isWalkingParameterHash = Animator.StringToHash("isMoving");
         _isCrouchingParameterHash = Animator.StringToHash("isCrouching");
         _isJumpingParameterHash = Animator.StringToHash("isJumping");
-        _crouchingStateParameterHash = Animator.StringToHash("Crouching");
 
         _cameraTransform = Camera.main.transform;
 
@@ -73,7 +72,7 @@ public class ThirdPersonController : MonoBehaviour
 
         movementDirection = Quaternion.AngleAxis(_cameraTransform.rotation.eulerAngles.y, Vector3.up) * movementDirection;
 
-        // Should walk? (left or right shift held)
+        // Should run? (left or right shift held)
         bool shouldRun = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
         // Set speed to half of input when charakter should walk
@@ -116,7 +115,8 @@ public class ThirdPersonController : MonoBehaviour
             _characterController.center = new Vector3(0, 0.85f, 0);
         }
 
-
+        // Character is audible, when moving fast
+        IsAudible = speed >= 0.5f;
 
     }
 }
