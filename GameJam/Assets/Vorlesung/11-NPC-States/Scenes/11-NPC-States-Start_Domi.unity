@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 423635863}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.58337194, g: 0.61450523, b: 0.641256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1459,6 +1459,8 @@ MonoBehaviour:
     - {fileID: 1334920892}
     - {fileID: 551007482}
     - {fileID: 1925417036}
+  CatchState:
+    catchDistance: 1.1
 --- !u!195 &1229811655
 NavMeshAgent:
   m_ObjectHideFlags: 0

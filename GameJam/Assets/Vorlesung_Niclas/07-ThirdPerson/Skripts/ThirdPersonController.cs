@@ -98,8 +98,8 @@ public class ThirdPersonController : MonoBehaviour
         // Rotate Character
         if(movementDirection != Vector3.zero) 
         {
-        Quaternion targetCharacterRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, RotationSpeed * Time.deltaTime);
+            Quaternion targetCharacterRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, RotationSpeed * Time.deltaTime);
         }
 
         // Set CharacterController Height and Center when crouched

@@ -15,6 +15,7 @@ public class PlayerPhysics : MonoBehaviour
     private bool _isJumping;
     private Animator _animator;
     private CharacterController _characterController;
+    private Transform _playerTransform;
     private Transform _cameraTransform;
 
         private void Start()
@@ -22,6 +23,7 @@ public class PlayerPhysics : MonoBehaviour
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
         _cameraTransform = Camera.main.transform;
+        _playerTransform = GetComponent<Transform>();
     }
 
     private void Update()
@@ -37,6 +39,7 @@ public class PlayerPhysics : MonoBehaviour
             _ySpeed = _ySpeed * Physics.gravity.y * GravityMultiplier * Time.deltaTime;
         }
         */
+
 
         if (IsGrounded())
         {
@@ -54,14 +57,13 @@ public class PlayerPhysics : MonoBehaviour
             _ySpeed += Physics.gravity.y * GravityMultiplier * Time.deltaTime;
         }
 
-        //_animator.SetFloat("yDirection", _ySpeed);
-        _animator.SetFloat("yDirection", _characterController.velocity.y);
+        _animator.SetFloat("yDirection", _ySpeed);
 
         Vector3 velocity = new Vector3(0, _ySpeed, 0);
 
-        if (_isJumping) 
+        if (_isJumping) //Vector3 jumpDirection = Quaternion.Euler(0, _cameraTransform.eulerAngles.y, 0) * Vector3.forward;
         {
-            Vector3 jumpDirection = Quaternion.Euler(0, _cameraTransform.eulerAngles.y, 0) * Vector3.forward;
+            Vector3 jumpDirection = Quaternion.Euler(0, _playerTransform.eulerAngles.y, 0) * Vector3.forward;
             jumpDirection *= JumpDistance;
             velocity += jumpDirection;
         }

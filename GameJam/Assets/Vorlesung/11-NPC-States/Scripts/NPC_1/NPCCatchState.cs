@@ -2,17 +2,21 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[Serializable]
 public class NPCCatchState : BaseState
 {
     public float catchDistance;
     public override void OnEnterState(BaseStateMachine controller)
     {
-        Debug.Log("NPCFleeState:OnEnterState");
+        Debug.Log("NPCCatchState:OnEnterState");
+        var npcStateMachine = controller as NPCStateMachine;
+
+        npcStateMachine.SetAgentSpeedMultiplier(2.5f);
     }
 
     public override void OnUpdateState(BaseStateMachine controller)
     {
-        Debug.Log("NPCFleeState:OnUpdateState");
+        Debug.Log("NPCCatchState:OnUpdateState");
         var npcStateMachine = controller as NPCStateMachine;
         npcStateMachine.SetDestination(npcStateMachine.PlayerPosition);
 
@@ -31,6 +35,9 @@ public class NPCCatchState : BaseState
 
     public override void OnExitState(BaseStateMachine controller)
     {
-        Debug.Log("NPCFleeState:OnExitState");
+        Debug.Log("NPCCatchState:OnExitState");
+        var npcStateMachine = controller as NPCStateMachine;
+
+        npcStateMachine.SetAgentSpeedMultiplier(1f);
     }
 }

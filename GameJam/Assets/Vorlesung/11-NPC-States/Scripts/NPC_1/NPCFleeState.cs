@@ -14,7 +14,7 @@ public class NPCFleeState : BaseState
     {
         Debug.Log("NPCFleeState:OnUpdateState");
         var npcStateMachine = controller as NPCStateMachine;
-        npcStateMachine.SetDestination((npcStateMachine.NPCPosition - npcStateMachine.PlayerPosition).normalized * fleeDistance);
+        npcStateMachine.SetDestination((npcStateMachine.NPCPosition - npcStateMachine.PlayerPosition).normalized * fleeDistance + npcStateMachine.NPCPosition);
 
         // Transitions
         // Can't see or hear player

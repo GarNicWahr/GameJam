@@ -21,7 +21,7 @@ public class NPCIdleState : BaseState
         var npcStateMachine = controller as NPCStateMachine;
 
         // Transitions
-        //Can see or hear player > Switch to flee
+        //Can see or hear player > Switch to catch
         if(npcStateMachine.CanHearPlayer || npcStateMachine.CanSeePlayer)
         {
             //npcStateMachine.SwitchToState(npcStateMachine.FleeState);

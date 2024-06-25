@@ -25,6 +25,15 @@ public class NPCStateMachine : BaseStateMachine
     private Transform _npc;
     private NavMeshAgent _agent;
     private Animator _animator;
+    private float _initialAgentSpeed;
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        WaypointGizmos.DrawWayPoints(PatrolState.Waypoints);
+    }
+
+#endif
     public override void Initialize()
     {
         _eyes = GetComponentInChildren<Eyes>();
@@ -34,6 +43,7 @@ public class NPCStateMachine : BaseStateMachine
         _npc = GetComponent<Transform>();
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _initialAgentSpeed = _agent.speed;
 
         CurrentState = IdleState;
         CurrentState.OnEnterState(this);
@@ -47,6 +57,11 @@ public class NPCStateMachine : BaseStateMachine
     public void SetDestination (Vector3 destination)
     {
         _agent.SetDestination(destination);
+    }
+
+    public void SetAgentSpeedMultiplier(float multiplier)
+    {
+        _agent.speed = _initialAgentSpeed * multiplier;
     }
 }
 
