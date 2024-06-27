@@ -17,10 +17,10 @@ public class NPCFleeState : BaseState
         npcStateMachine.SetDestination((npcStateMachine.NPCPosition - npcStateMachine.PlayerPosition).normalized * fleeDistance + npcStateMachine.NPCPosition);
 
         // Transitions
-        // Can't see or hear player
-        if (!npcStateMachine.CanHearPlayer && !npcStateMachine.CanSeePlayer)
+        // Can see or hear player > switch to hide
+        if (npcStateMachine.CanHearPlayer || npcStateMachine.CanSeePlayer)
         {
-            npcStateMachine.SwitchToState(npcStateMachine.IdleState);
+            npcStateMachine.SwitchToState(npcStateMachine.HideState);
         }
 
     }

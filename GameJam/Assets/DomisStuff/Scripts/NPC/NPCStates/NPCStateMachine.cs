@@ -16,6 +16,7 @@ public class NPCStateMachine : BaseStateMachine
 
     public NPCIdleState IdleState;
     public NPCFleeState FleeState;
+    public NPCHideState HideState;
     public NPCPatrolState PatrolState;
     public NPCCatchState CatchState;
 
@@ -28,6 +29,7 @@ public class NPCStateMachine : BaseStateMachine
     private NavMeshAgent _agent;
     private Animator _animator;
     private float _initialAgentSpeed;
+    private int _isHidingParameterHash;
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
@@ -45,6 +47,7 @@ public class NPCStateMachine : BaseStateMachine
         _npc = GetComponent<Transform>();
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _isHidingParameterHash = Animator.StringToHash("isHiding");
         _initialAgentSpeed = _agent.speed;
 
         CurrentState = IdleState;
@@ -64,6 +67,11 @@ public class NPCStateMachine : BaseStateMachine
     public void SetAgentSpeedMultiplier(float multiplier)
     {
         _agent.speed = _initialAgentSpeed * multiplier;
+    }
+
+    public void SetHideAnimation(bool isHiding)
+    {
+        _animator.SetBool(_isHidingParameterHash, isHiding);
     }
 }
 

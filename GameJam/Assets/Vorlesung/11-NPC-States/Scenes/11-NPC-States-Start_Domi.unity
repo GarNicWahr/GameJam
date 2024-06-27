@@ -1453,6 +1453,10 @@ MonoBehaviour:
     MaxWaitTime: 5
   FleeState:
     fleeDistance: 3
+  HideState:
+    HidingSpots: []
+    MinHideTime: 0
+    MaxHideTime: 0
   PatrolState:
     Waypoints:
     - {fileID: 257303303}
@@ -1671,6 +1675,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8465449184688182683, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c7e07fbb5c0fe374db6f3de6f7f5ea78, type: 2}
     - target: {fileID: 8465449184688182757, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
         type: 3}
       propertyPath: m_Name
@@ -1735,6 +1744,12 @@ MonoBehaviour:
     MaxWaitTime: 5
   FleeState:
     fleeDistance: 3
+  HideState:
+    HidingSpots:
+    - {fileID: 169136627}
+    - {fileID: 478904653}
+    MinHideTime: 10
+    MaxHideTime: 15
   PatrolState:
     Waypoints:
     - {fileID: 725092352}
@@ -2986,7 +3001,7 @@ PrefabInstance:
     - target: {fileID: 1843937666873704560, guid: fd3e7c2801fcce84a92f2495a8868c1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1843937666873704560, guid: fd3e7c2801fcce84a92f2495a8868c1c,
         type: 3}
@@ -3134,6 +3149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465449184688182757, guid: 8f0affe4c4c0d794fb9e9469c05060f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

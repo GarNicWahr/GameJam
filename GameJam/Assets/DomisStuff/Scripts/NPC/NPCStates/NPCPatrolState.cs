@@ -38,11 +38,21 @@ public class NPCPatrolState : BaseState
             npcStateMachine.SwitchToState(npcStateMachine.IdleState);
         }
 
-        //Can see or hear player > Switch to catch
-        if (npcStateMachine.CanHearPlayer || npcStateMachine.CanSeePlayer)
+        //Can see or hear player and the NPC should flee > Switch to flee
+        if (npcStateMachine.isFleeing)
         {
-            // npcStateMachine.SwitchToState(npcStateMachine.FleeState);
-            npcStateMachine.SwitchToState(npcStateMachine.CatchState);
+            if (npcStateMachine.CanHearPlayer || npcStateMachine.CanSeePlayer)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.FleeState);
+            }
+        }
+        //Can see or hear player and the NPC should not flee  > Switch to catch
+        if (!npcStateMachine.isFleeing)
+        {
+            if (npcStateMachine.CanHearPlayer || npcStateMachine.CanSeePlayer)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.CatchState);
+            }
         }
     }
 

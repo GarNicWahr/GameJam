@@ -38,26 +38,56 @@ public class MovingPlatform : MonoBehaviour
             // Normalize value for position (0 - 1)
             float position = AnimationCurve.Evaluate(_progress) % Duration;
             _chart.m_Position = position;
+
+            Debug.Log(position);
+        }
+
+        if(PathPosition())
+        {
+            _isMoving = false;
+        }
+
+    }
+
+    private bool PathPosition ()
+    {
+        float position = AnimationCurve.Evaluate(_progress) % Duration;
+
+        if (position <= 0 || position == 1)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
         }
     }
 
-    // Enter trigger > make player child of this transform
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player")) 
+        // Enter trigger > make player child of this transform
+        void OnTriggerEnter(Collider other)
         {
-            _isMoving = true;
-            other.transform.SetParent(transform);
-        }        
-    }
+            if (other.CompareTag("Player")) 
+            {
+                _isMoving = true;
+                other.transform.SetParent(transform);
+            }        
+        }
 
     // Exit trigger > unparent the player
     void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("Player") && PathPosition())
+        {
+            _isMoving = false;
+            other.transform.SetParent(null);
+        }
         if (other.CompareTag("Player"))
         {
             other.transform.SetParent(null);
         }
+
     }
+
 }
 
