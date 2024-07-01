@@ -11,7 +11,7 @@ public class NPCCatchState : BaseState
         Debug.Log("NPCCatchState:OnEnterState");
         var npcStateMachine = controller as NPCStateMachine;
 
-        npcStateMachine.SetAgentSpeedMultiplier(2f);
+        npcStateMachine.SetAgentSpeedMultiplier(1.5f);
     }
 
     public override void OnUpdateState(BaseStateMachine controller)
